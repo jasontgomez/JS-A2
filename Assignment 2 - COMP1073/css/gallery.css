@@ -5,3 +5,18 @@ Jason Gomez 200587201
 Daniel Perusse 20055190
 Sebastian Bruce 200561191
 */
+
+html {
+    border: 0;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(185, 229, 244);
+}
+
+h1 {
+    text-align: center;
+}
+
+ul img:not(.selected) {
+    filter: grayscale(1);
+}

@@ -16,18 +16,22 @@ const container = document.getElementById('image-container');
 for (let i = 0; i < imageArray.length; i++) {
     const img = document.createElement('img');
     img.src = imageArray[i][0];
+    if (i == 0) {
+        img.classList.add('selected');
+    }
     container.appendChild(img);
     container.appendChild(document.createElement('br'));
 }
 
-// event listerner for picture list items
+// event listener for picture list items
 const imageGallery = document.querySelector('ul');
 
 // event listener 
 imageGallery.addEventListener('click', function(event){
 
     console.log('Received ' + cleanSrc(event.target.src));
-    updateFigure(cleanSrc(event.target.src)); 
+    updateFigure(cleanSrc(event.target.src));
+    event.target.classList.add('selected');
 
   });
 
