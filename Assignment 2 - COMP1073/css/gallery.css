@@ -13,10 +13,55 @@ html {
     background-color: rgb(185, 229, 244);
 }
 
+body {
+    padding-bottom: 200px;
+}
+
 h1 {
     text-align: center;
 }
 
 ul img:not(.selected) {
-    filter: grayscale(1);
+    filter: grayscale(.8);
+}
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    
+}
+
+ul {
+    margin: 0;
+}
+
+figcaption {
+    background-color: white;
+    margin-top: -5px;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-radius: 0 0 10px 50px;
+}
+
+ul img {
+    margin-bottom: 20px;
+}
+
+ul img:first-child {
+    border-radius: 5px 50px 0 0;
+}
+
+ul img:last-child {
+    border-radius: 0 0 50px 5px;
+}
+
+figure img {
+    border-radius: 50px 10px 0 0;
 }

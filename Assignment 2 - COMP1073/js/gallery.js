@@ -7,7 +7,7 @@ const imageArray = [
     ['images/flowers-white-small.jpg', 'these flowers are white'], 
     ['images/flowers-yellow-small.jpg', 'these flowers are yellow']]
 
-// referrences
+// references
 const featureImage = document.querySelector('img');
 const featureDesc = document.querySelector('figcaption');
 
@@ -20,7 +20,7 @@ for (let i = 0; i < imageArray.length; i++) {
         img.classList.add('selected');
     }
     container.appendChild(img);
-    container.appendChild(document.createElement('br'));
+    //container.appendChild(document.createElement('br'));
 }
 
 // event listener for picture list items
