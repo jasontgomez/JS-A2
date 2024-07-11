@@ -29,8 +29,15 @@ const imageGallery = document.querySelector('ul');
 // event listener 
 imageGallery.addEventListener('click', function(event){
 
+    //get all selected imgs
+    const selected = document.querySelectorAll(".selected");
+
+    //remove the selected id
+    selected.forEach(cell => cell.classList.remove("selected"));
+
     console.log('Received ' + cleanSrc(event.target.src));
-    updateFigure(cleanSrc(event.target.src));
+    updateFigure(cleanSrc(event.target.src));   
+    //add selected id to clicked img
     event.target.classList.add('selected');
 
   });
