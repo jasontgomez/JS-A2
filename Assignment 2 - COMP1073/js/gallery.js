@@ -1,11 +1,33 @@
+// Jason Gomez 200587201
+// Daniel Perusse 20055190
+// Sebastian Bruce 200561191
+// COMP1073
 
-// array of images
-const imageArray = [
-    ['images/flowers-pink-small.jpg', 'these flowers are pink'], 
-    ['images/flowers-purple-small.jpg', 'these flowers are purple'], 
-    ['images/flowers-red-small.jpg', 'these flowers are red'], 
-    ['images/flowers-white-small.jpg', 'these flowers are white'], 
-    ['images/flowers-yellow-small.jpg', 'these flowers are yellow']]
+// image object
+class Image {
+    // setter
+    constructor(linkInput, descInput, colorInput) {
+        this.link = linkInput;
+        this.description = descInput;
+        this.color = colorInput;
+    }
+    // getter
+    getLink() {
+        return this.link;
+    }
+    getDesc() {
+        return this.description;
+    }
+}
+
+// array of image objects
+let imageArray = [
+    new Image('images/flowers-pink-small.jpg', 'these flowers are pink', 'pink'),
+    new Image('images/flowers-purple-small.jpg', 'these flowers are purple', 'purple'),
+    new Image('images/flowers-red-small.jpg', 'these flowers are red', 'red'),
+    new Image('images/flowers-white-small.jpg', 'these flowers are white', 'white'),
+    new Image('images/flowers-yellow-small.jpg', 'these flowers are yellow', 'yellow')
+]
 
 // references
 const featureImage = document.querySelector('img');
@@ -15,12 +37,12 @@ const featureDesc = document.querySelector('figcaption');
 const container = document.getElementById('image-container');
 for (let i = 0; i < imageArray.length; i++) {
     const img = document.createElement('img');
-    img.src = imageArray[i][0];
+    img.src = imageArray[i].link;
     if (i == 0) {
         img.classList.add('selected');
     }
     container.appendChild(img);
-    //container.appendChild(document.createElement('br'));
+    container.appendChild(document.createElement('br'));
 }
 
 // event listener for picture list items
@@ -52,24 +74,18 @@ function cleanSrc(inputString) {
 // function to update big image
 function updateFigure(targetSrc) {
 
-    let updateImg = '';
-    let updateDesc = '';
-
     // loop through image array
     for (let j = 0; j < imageArray.length; j++) {
-        if(imageArray[j][0] == targetSrc){
+        if(imageArray[j].getLink() == targetSrc){
             // new image path
-            updateImg = updateImg + imageArray[j][0].replace('small', 'large');
+            featureImage.src = imageArray[j].link.replace('small', 'large');
             // new desc
-            updateDesc = updateDesc + imageArray[j][1];
+            featureDesc.innerText = imageArray[j].description;
+            //color
+            featureDesc.style.backgroundColor = imageArray[j].color;
         }
     }
-    // update featured images
-    featureImage.src = updateImg;
-    
-    // update image description
-    featureDesc.innerText = updateDesc;
 }
 
 // first element
-updateFigure(imageArray[0][0]); 
+updateFigure(imageArray[0].link); 

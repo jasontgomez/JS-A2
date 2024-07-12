@@ -42,12 +42,14 @@ ul {
 }
 
 figcaption {
-    background-color: white;
-    margin-top: -5px;
+    margin-top: -10px;
     text-align: center;
     font-size: 1.2rem;
     letter-spacing: 1px;
     border-radius: 0 0 10px 50px;
+    min-height: 50px;
+    padding-top: 12px;
+    box-shadow: 10px 7px 5px rgb(120, 212, 242);
 }
 
 ul img {
@@ -58,10 +60,11 @@ ul img:first-child {
     border-radius: 5px 50px 0 0;
 }
 
-ul img:last-child {
+ul img:nth-child(9) {
     border-radius: 0 0 50px 5px;
 }
 
 figure img {
     border-radius: 50px 10px 0 0;
+    box-shadow: 10px 0 5px -2px rgb(120, 212, 242);
 }
