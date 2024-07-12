@@ -39,6 +39,7 @@ figure {
 
 ul {
     margin: 0;
+    filter: drop-shadow(5px 5px 5px rgb(26, 166, 212));
 }
 
 figcaption {
@@ -54,6 +55,20 @@ figcaption {
 
 ul img {
     margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+    transition: all .2s ease-in-out;
+}
+
+ul img:hover {
+    box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+    transform: translate3d(0px, -3px, 0px);
+}
+
+ul img:active {
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px;
+    transition: all .1s ease-in-out;
+    transform: translate3d(0px, 1px, 0px);
 }
 
 ul img:first-child {
